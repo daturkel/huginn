@@ -1,5 +1,5 @@
 #!/bin/sh
 title=$(echo $2 | sed -e 's/[^a-zA-z0-9_ -]//g' -e 's/[ _-][ _-]*/ /g' -e 's/[_ ][_ ]*/-/g')
 wget -qO- http://api.html2pdfrocket.com/pdf\?value\=$1\&apikey\=REDACTED 1>$title.pdf 2>/dev/null
-curl -H "Authorization: Bearer REDACTED" https://api-content.dropbox.com/1/files_put/dropbox/Personal/PDFs/$title.pdf -T $title.pdf
+curl -H "Authorization: Bearer REDACTED" https://api-content.dropbox.com/1/files_put/dropbox/PATH/TO/PDFs/$title.pdf -T $title.pdf
 rm $title.pdf
