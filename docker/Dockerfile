@@ -19,10 +19,12 @@ RUN apt-get update && \
 
 RUN pip install supervisor-stdout
 
+# Dan Turkel added this
+COPY /scripts/urlpdfdb /usr/bin/
+
 ADD scripts/setup /scripts/setup
 RUN chmod 755 /scripts/setup
 RUN /scripts/setup
-
 WORKDIR /app
 
 ADD scripts/init /scripts/init
